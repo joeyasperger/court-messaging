@@ -1,0 +1,15 @@
+<%= form_tag('/hearings', method: 'post') do %>
+	<%= label_tag(:firstname, "First Name:") %>
+  	<%= text_field_tag(:firstname) %>
+  	<%= label_tag(:lastname, "Last Name:") %>
+  	<%= text_field_tag(:lastname) %>
+  	<%= label_tag(:cell_number, "Cell Number:") %>
+  	<%= text_field_tag(:cell_number) %>
+  	<%= label_tag(:id_number, "ID Number:") %>
+  	<%= text_field_tag(:id_number) %>
+  	<%= label_tag(:date, "Hearing Date:") %>
+  	<%= text_field_tag(:date) %>
+  	<%= label_tag(:location, "Hearing Location:") %>
+  	<%= text_field_tag(:location) %>
+  	<%= submit_tag("Create") %>
+<% end %>
