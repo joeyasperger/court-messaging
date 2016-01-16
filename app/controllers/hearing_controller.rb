@@ -16,6 +16,11 @@ class HearingController < ApplicationController
 		hearing.user_id = user.id
 		hearing.save
 
+		message = Message.new(hearing: hearing, sent: false)
+		message.text = "#{user.firstname}, you are scheduled for a court hearing on #{hearing.date.strftime("%-m/%-d at %I:%M %p")} at #{hearing.location}."
+		message.time = hearing.date - 24 * 3600
+		message.save
+
 		redirect_to '/hearings/new'
 	end
 
