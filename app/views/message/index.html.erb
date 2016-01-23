@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th>Message Queue</th>
+  </tr>
+  <% @messages_queued.each do |message| %>
+    <tr>
+      <td><%= message.user.firstname %></td>
+      <td><%= message.user.lastname %></td>
+      <td><%= message.user.id_number %></td>
+    </tr>
+  <% end %>
+</table>
+<table>
+  <tr>
+    <th>Sent Messages</th>
+  </tr>
+  <% @messages_sent.each do |message| %>
+    <tr>
+      <td><%= message.user.firstname %></td>
+      <td><%= message.user.lastname %></td>
+      <td><%= message.user.id_number %></td>
+    </tr>
+  <% end %>
+</table>

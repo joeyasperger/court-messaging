@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'hearings/new' => 'hearing#new'
   post 'hearings' => 'hearing#create'
 
+  get 'messages/index' => 'message#index'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
