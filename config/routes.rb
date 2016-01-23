@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :admins
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   get 'hearings/new' => 'hearing#new'
   post 'hearings' => 'hearing#create'
+
+  #root to: "messages#index"
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
