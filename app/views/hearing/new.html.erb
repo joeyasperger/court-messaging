@@ -1,15 +1,41 @@
-<%= form_tag('/hearings', method: 'post') do %>
-	<%= label_tag(:firstname, "First Name:") %>
-  	<%= text_field_tag(:firstname) %>
-  	<%= label_tag(:lastname, "Last Name:") %>
-  	<%= text_field_tag(:lastname) %>
-  	<%= label_tag(:cell_number, "Cell Number:") %>
-  	<%= text_field_tag(:cell_number) %>
-  	<%= label_tag(:id_number, "ID Number:") %>
-  	<%= text_field_tag(:id_number) %>
-  	<%= label_tag(:date, "Hearing Date:") %>
-  	<%= text_field_tag(:date) %>
-  	<%= label_tag(:location, "Hearing Location:") %>
-  	<%= text_field_tag(:location) %>
-  	<%= submit_tag("Create") %>
-<% end %>
+<div class="container">
+  <%= form_tag('/hearings', method: 'post') do %>
+    <div class="row"> 
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-sm-6 form-group">
+          	<%= label_tag(:firstname, "First Name:", class:"sr-only") %>
+          	<%= text_field_tag(:firstname, "", class:"form-control", placeholder: "First Name") %>
+          </div>
+          <div class="col-sm-6 form-group">
+          	<%= label_tag(:lastname, "Last Name:", class:"sr-only") %>
+          	<%= text_field_tag(:lastname, "", class:"form-control", placeholder: "Last Name") %>
+          </div>
+        </div>
+        <div class=" row">
+          <div class="col-sm-6 form-group">
+          	<%= label_tag(:cell_number, "Cell Number:", class:"sr-only") %>
+          	<%= text_field_tag(:cell_number, "", class:"form-control", placeholder: "Cell Number") %>
+          </div>
+          <div class="col-sm-6 form-group">
+          	<%= label_tag(:id_number, "ID Number:", class:"sr-only") %>
+          	<%= text_field_tag(:id_number, "", class: "form-control", placeholder: "ID Number") %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 form-group">
+          	<%= label_tag(:date, "Hearing Date:", class:"sr-only") %>
+          	<%= text_field_tag(:date, "", class: "form-control", placeholder: "Hearing Date") %>
+          </div>
+          <div class="col-sm-6 form-group">
+          	<%= label_tag(:location, "Hearing Location:", class:"sr-only") %>
+          	<%= text_field_tag(:location, "", class: "form-control", placeholder: "Hearing Location") %>
+          </div>
+        </div>
+      	<%= submit_tag("Create", class:"btn btn-primary") %>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  <% end %>
+<div>
