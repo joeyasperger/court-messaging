@@ -1,6 +1,8 @@
 class HearingController < ApplicationController
-
+	before_action :authenticate_admin!
 	def new
+		@current_user = current_user.email
+		#raise params.inspect
 
 	end
 
