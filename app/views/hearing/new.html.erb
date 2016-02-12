@@ -25,17 +25,43 @@
         </div>
         <div class="row">
           <div class="col-sm-6 form-group">
-          	<%= label_tag(:date, "Hearing Date:", class:"sr-only") %>
-          	<%= text_field_tag(:date, "", class: "form-control", placeholder: "Hearing Date") %>
+            <div class="form-group">
+              <div class='input-group date' id='datetimepicker1'>
+                <input type='text' class="form-control" placeholder="Hearing Date" />
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+              </div>
+            </div>
           </div>
           <div class="col-sm-6 form-group">
           	<%= label_tag(:location, "Hearing Location:", class:"sr-only") %>
           	<%= text_field_tag(:location, "", class: "form-control", placeholder: "Hearing Location") %>
           </div>
         </div>
+        <div class="container">
       	<%= submit_tag("Create", class:"btn btn-primary") %>
       </div>
       <div class="col-md-2"></div>
     </div>
   <% end %>
 <div>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+    $('#cell_number').keyup(function(){
+      $('#cell_number').val(function(index, value){
+        value = value.replace(/\D/g,'')
+        if (value.length >= 6) {
+            return value.replace(/(\d{3})\-?(\d{3})\-?/,'($1) $2-');
+        }
+        else if (value.length >= 3) {
+            return value.replace(/(\d{3})\-?/,'($1) ');
+        }
+        else{
+          return value;
+        }
+      })
+    });
+</script>
