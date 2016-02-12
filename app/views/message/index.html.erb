@@ -1,17 +1,14 @@
+<h1>Message Dashboard</h1>
 <table>
   <tr>
     <th>Message Queue</th>
   </tr>
-  <% user_ids_queued = [] %>
-  <% @messages_queued.each do |message| %>
-    <% if user_ids_queued.include?(message.user.id_number) %>
-      <% next %>
-    <% end %>
-    <% user_ids_queued.push(message.user.id_number) %>
+  <% @user_list_messages_queued.each do |message| %>
     <tr>
       <td><%= message.user.firstname %></td>
       <td><%= message.user.lastname %></td>
       <td><%= message.user.id_number %></td>
+      <td><%= @user_ids_queued[message.user.id_number] %></td>
     </tr>
   <% end %>
 </table>
@@ -19,16 +16,12 @@
   <tr>
     <th>Sent Messages</th>
   </tr>
-  <% user_ids_sent = [] %>
-  <% @messages_sent.each do |message| %>
-    <% if user_ids_sent.include?(message.user.id_number) %>
-      <% next %>
-    <% end %>
-    <% user_ids_sent.push(message.user.id_number) %>
+  <% @user_list_messages_sent.each do |message| %>
     <tr>
       <td><%= message.user.firstname %></td>
       <td><%= message.user.lastname %></td>
       <td><%= message.user.id_number %></td>
+      <td><%= @user_ids_sent[message.user.id_number] %></td>
     </tr>
   <% end %>
 </table>
