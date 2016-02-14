@@ -1,6 +1,7 @@
 class HearingController < ApplicationController
-
+	before_action :authenticate_admin!
 	def new
+		@curr_user = current_admin
 
 	end
 
